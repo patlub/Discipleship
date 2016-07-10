@@ -6,7 +6,7 @@
  * Time: 17:36
  */
 
-class Member{
+class Discipleship{
     protected $_name;
     protected $_sex;
     protected $_maritsl_status;
@@ -67,4 +67,69 @@ class Member{
     public function get_ministry_future(){return $this->_ministry_future;}
     public function set_ministry_future($ministry_future){$this->_ministry_future = $ministry_future;}
 
+    public function Member($name,$sex,$marital_status,$occupation,$email,$address,$member_status, $join_date,$submit_status, $submit_to,
+                           $want_submit,$want_submit_to,$minister,$department,$role,$join_ministry,$sector,$passion,$ministry_future){
+
+        $this->_name = $name;
+        $this->_sex = $sex;
+        $this->_maritsl_status = $marital_status;
+        $this->_occupation = $occupation;
+        $this->_email = $email;
+        $this->_address = $address;
+        $this->_member_status = $member_status;
+        $this->_join_date = $join_date;
+        $this->_submit_status = $submit_status;
+        $this->_submit_to = $submit_to;
+        $this->_want_submit = $want_submit;
+        $this->_want_submit_to = $want_submit_to;
+        $this->_minister = $minister;
+        $this->_department = $department;
+        $this->_role = $role;
+        $this->_join_ministry = $join_ministry;
+        $this->_sector = $sector;
+        $this->_passion = $passion;
+        $this->_ministry_future = $ministry_future;
+    }
+
+    public function add_disciple(){
+        $dbh = $this->connectDB();
+        echo "Connection Error: " . $e->getMessage();
+        $statementHandler = $dbh->prepare('INSERT INTO disciples VALUES
+                                          (:id,:name,:sex,:marital,:occupation,:email,:address,:member_status,:join_date,:submit_status,
+                                           :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future)');
+        $id = '';
+        $statementHandler->bindParam(':id', $id);
+        $statementHandler->bindParam(':name', $this->_name);
+        $statementHandler->bindParam(':sex', $this->_sex);
+        $statementHandler->bindParam(':marital', $this->_maritsl_status);
+        $statementHandler->bindParam(':email', $this->_email);
+        $statementHandler->bindParam(':address', $this->_address);
+        $statementHandler->bindParam(':member_status', $this->_member_status);
+        $statementHandler->bindParam(':join_date', $this->_join_date);
+        $statementHandler->bindParam(':submit_status', $this->_submit_status);
+        $statementHandler->bindParam(':submit_to', $this->_submit_to);
+        $statementHandler->bindParam(':want_submit', $this->_want_submit);
+        $statementHandler->bindParam(':want_submit_to', $this->_want_submit_to);
+        $statementHandler->bindParam(':minister', $this->_minister);
+        $statementHandler->bindParam(':department', $this->_department);
+        $statementHandler->bindParam(':role', $this->_role);
+        $statementHandler->bindParam(':join_ministry', $this->_join_ministry);
+        $statementHandler->bindParam(':sector', $this->_sector);
+        $statementHandler->bindParam(':passion', $this->_passion);
+        $statementHandler->bindParam(':ministry_future', $this->_ministry_future);
+        $result = $statementHandler->execute();
+        if($result) {
+            return $result;
+        }
+        return false;
+    }
+
+    public function connectDB()
+    {
+        try {
+            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "");
+        } catch (PDOException $e) {
+            echo "Connection Error: " . $e->getMessage();
+        }
+    }
 }
