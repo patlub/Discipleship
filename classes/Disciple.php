@@ -6,7 +6,7 @@
  * Time: 17:36
  */
 
-class Discipleship{
+class Disciple{
     protected $_name;
     protected $_sex;
     protected $_maritsl_status;
@@ -67,7 +67,7 @@ class Discipleship{
     public function get_ministry_future(){return $this->_ministry_future;}
     public function set_ministry_future($ministry_future){$this->_ministry_future = $ministry_future;}
 
-    public function Member($name,$sex,$marital_status,$occupation,$email,$address,$member_status, $join_date,$submit_status, $submit_to,
+    public function Disciple($name,$sex,$marital_status,$occupation,$email,$address,$member_status, $join_date,$submit_status, $submit_to,
                            $want_submit,$want_submit_to,$minister,$department,$role,$join_ministry,$sector,$passion,$ministry_future){
 
         $this->_name = $name;
@@ -93,7 +93,6 @@ class Discipleship{
 
     public function add_disciple(){
         $dbh = $this->connectDB();
-        echo "Connection Error: " . $e->getMessage();
         $statementHandler = $dbh->prepare('INSERT INTO disciples VALUES
                                           (:id,:name,:sex,:marital,:occupation,:email,:address,:member_status,:join_date,:submit_status,
                                            :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future)');
@@ -103,6 +102,7 @@ class Discipleship{
         $statementHandler->bindParam(':sex', $this->_sex);
         $statementHandler->bindParam(':marital', $this->_maritsl_status);
         $statementHandler->bindParam(':email', $this->_email);
+        $statementHandler->bindParam(':occupation', $this->_occupation);
         $statementHandler->bindParam(':address', $this->_address);
         $statementHandler->bindParam(':member_status', $this->_member_status);
         $statementHandler->bindParam(':join_date', $this->_join_date);
@@ -127,7 +127,7 @@ class Discipleship{
     public function connectDB()
     {
         try {
-            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "");
+            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "patrick");
         } catch (PDOException $e) {
             echo "Connection Error: " . $e->getMessage();
         }
