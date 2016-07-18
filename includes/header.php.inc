@@ -19,14 +19,15 @@
     <?php 
 
                         require_once('config/config.php');
+                        session_start();
                         $query = "SELECT * FROM programs";
                         $result = mysql_query($query);
                         while ($row = mysql_fetch_array($result)){
 
                         if(!isset($_GET['pid'])){                                    
                             if($row['status'] == 'on-going'){
-                                    $pid = $row['number'];
-                                    echo $pid;?>
+                                    $_SESSION['prog_id'] = $row['number'];
+                                    ?>
 
                                     <option value="<?php echo 'index.php?pid='.$row['number'];?>" selected><?php echo "Program ".$row['number'];?></option>
                                   <?php 

@@ -17,22 +17,6 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <input id="start_date" type="date" name="start_date" class="form-control" placeholder="Start Date" input-type="date" required/>
-                    </div>
-                </div>
-
-
-                <div class="input-group date" data-provide="datepicker">
-    <input type="text" class="form-control" datepicker>
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
-    </div>
-
-
-
-                <div class="form-group">
-                    <div class="row">
                         <input id="add_program" type="submit" name="add_program" value="Add Program" class="form-control btn btn-success"/>
                     </div>
                 </div>

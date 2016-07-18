@@ -9,10 +9,9 @@ include_once('includes/header.php.inc');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="datepicker/css/datepicker.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="datepicker/js/bootstrap-datepicker.js"></script>
 
 
 
@@ -20,48 +19,7 @@ include_once('includes/header.php.inc');
     <title>Discipleship</title>
 </head>
 <body>
-<style scoped="scoped">
-    body {
-        overflow-x: hidden;
-    }
 
-    #heading {
-        margin-bottom: 2%;
-    }
-
-    #form-div {
-        margin-left: 2%;
-    }
-
-    .section {
-        font-size: 90%;
-        margin-left: 35%;
-        margin-bottom: 5%;
-        color: red;
-    }
-
-    .section-div {
-        border: solid 1px !important;
-        padding: 2%;
-        border-radius: 5%;
-        margin: 3.5%;
-    }
-    .modal-div{
-        padding: 2%;
-        border-radius: 5%;
-        margin: 3.5%;   
-    }
-    #menu{
-        margin-left: 5%;
-    }
-    .menu-item{
-
-    }
-
-    div {
-        /*border: solid red 1px !important;*/
-    }
-</style>
 <div class="container-fluid">
     <?php //include_once('includes/header.php.inc');
     ?>

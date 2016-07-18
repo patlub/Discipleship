@@ -1,0 +1,41 @@
+body {
+    overflow-x: hidden;
+}
+
+#heading {
+    margin-bottom: 2%;
+}
+
+#form-div {
+    margin-left: 2%;
+}
+
+.section {
+    font-size: 90%;
+    margin-left: 2%;
+    margin-bottom: 5%;
+    color: red;
+}
+
+.section-div {
+    border: solid 1px !important;
+    padding: 2%;
+    border-radius: 5%;
+    margin: 3.5%;
+}
+
+#menu {
+    margin-left: 5%;
+}
+
+.menu-item {
+
+}
+
+#table-box {
+    margin-top: 2%;
+}
+
+div {
+    /*border: solid red 1px !important;*/
+}

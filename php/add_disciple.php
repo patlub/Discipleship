@@ -28,8 +28,17 @@ $sector = $_POST['sector'];
 $passion = $_POST['passion'];
 $future = $_POST['future'];
 
+echo $_GET['pid'];
+if(!isset($_GET['pid'])){
+	echo "lalala";
+	$pid = $_SESSION['prog_id'];
+}else{
+	echo "wooooow";
+	$pid = $_GET['pid'];
+}
+
 $disciple = new Disciple($name,$sex,$marital_status,$occupation,$email,$address,$member,$join,$submitted,$who_submit,
-                        $submit,++$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future);
+                        $submit,$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future,$pid);
 $result = $disciple->add_disciple();
 if($result) {
     echo $result;

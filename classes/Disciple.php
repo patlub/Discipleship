@@ -26,6 +26,7 @@ class Disciple{
     protected $_sector;
     protected $_passion;
     protected $_ministry_future;
+    protected $_program;
 
 
     public function get_name(){return $this->_name;}
@@ -66,9 +67,11 @@ class Disciple{
     public function set_passion($passion){$this->_passion = $passion;}
     public function get_ministry_future(){return $this->_ministry_future;}
     public function set_ministry_future($ministry_future){$this->_ministry_future = $ministry_future;}
+    public function get_program(){return $this->_program;}
+    public function set_program($program){$this->_program = $program;}
 
     public function Disciple($name,$sex,$marital_status,$occupation,$email,$address,$member_status, $join_date,$submit_status, $submit_to,
-                           $want_submit,$want_submit_to,$minister,$department,$role,$join_ministry,$sector,$passion,$ministry_future){
+                           $want_submit,$want_submit_to,$minister,$department,$role,$join_ministry,$sector,$passion,$ministry_future,$program){
 
         $this->_name = $name;
         $this->_sex = $sex;
@@ -89,13 +92,14 @@ class Disciple{
         $this->_sector = $sector;
         $this->_passion = $passion;
         $this->_ministry_future = $ministry_future;
+        $this->_program = $program;
     }
 
     public function add_disciple(){
         $dbh = $this->connectDB();
         $statementHandler = $dbh->prepare('INSERT INTO disciples VALUES
                                           (:id,:name,:sex,:marital,:occupation,:email,:address,:member_status,:join_date,:submit_status,
-                                           :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future)');
+                                           :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future,:program)');
         $id = '';
         $statementHandler->bindParam(':id', $id);
         $statementHandler->bindParam(':name', $this->_name);
@@ -117,6 +121,7 @@ class Disciple{
         $statementHandler->bindParam(':sector', $this->_sector);
         $statementHandler->bindParam(':passion', $this->_passion);
         $statementHandler->bindParam(':ministry_future', $this->_ministry_future);
+        $statementHandler->bindParam(':program', $this->_program);
         $result = $statementHandler->execute();
         if($result) {
             return $result;
