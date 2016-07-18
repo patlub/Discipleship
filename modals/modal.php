@@ -7,14 +7,13 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-      
         <form method="post" role="form" enctype="multipart/form-data" action="php/add_program.php">
             <div class="modal-div">
                 <div class="form-group">
                     <div class="row">
                         <input id="number" type="text" name="number" class="form-control" placeholder="Program number" input-type="number" required/>
                     </div>
-                </div>
+                </div>                              
                 <div class="form-group">
                     <div class="row">
                         <input id="add_program" type="submit" name="add_program" value="Add Program" class="form-control btn btn-success"/>

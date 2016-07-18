@@ -26,6 +26,7 @@ body {
 
 #menu {
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 .menu-item {
@@ -33,7 +34,23 @@ body {
 }
 
 #table-box {
-    margin-top: 2%;
+    margin: 2%;
+}
+
+#roll-call-table-box {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+#date-box {
+    margin: 2%;
+}
+.table-glyph{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.glyphicon.glyphicon-user, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-remove, .glyphicon.glyphicon-road {
+    font-size: 23px;
 }
 
 div {
