@@ -25,7 +25,7 @@ $disciple = new Disciple();
 $disciple->get_disciple($id);
 ?>
 <div id="form-div" class="row">
-    <form method="post" role="form" enctype="multipart/form-data" action="php/edit_disciple.php">
+    <form method="post" role="form" enctype="multipart/form-data" action="php/edit_disciple.php?id=<?php echo $id;?>">
         <div class="col-md-3 section-div">
             <div id="section1" class="section">Section 1</div>
             <div class="form-group">

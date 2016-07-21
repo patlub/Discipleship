@@ -28,8 +28,10 @@ $sector = $_POST['sector'];
 $passion = $_POST['passion'];
 $future = $_POST['future'];
 
+$id = $_GET['id'];
 $disciple = Disciple::newDisciple($name,$sex,$marital_status,$occupation,$email,$address,$member,$join,$submitted,$who_submit,
-                        $submit,$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future,$pid);
+                        $submit,$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future,null);
+$disciple->set_id($id);
 $result = $disciple->edit_disciple();
 if($result) {
     echo $result;

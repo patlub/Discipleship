@@ -17,7 +17,7 @@ class DatabaseHelper
         if ($statementHandler->rowCount() > 0) {
             while ($user = $statementHandler->fetch(PDO::FETCH_ASSOC)) {
                 $id = $user['id'];
-                $name = $user['name'];
+                $name = $user['full_name'];
                 $sex = $user['sex'];
                 $status = $user['marital_status'];
                 $occupation = $user['occupation'];

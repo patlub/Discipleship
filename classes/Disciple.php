@@ -8,9 +8,10 @@
  */
 class Disciple
 {
+    protected $_id;
     protected $_name;
     protected $_sex;
-    protected $_maritsl_status;
+    protected $_marital_status;
     protected $_occupation;
     protected $_email;
     protected $_address;
@@ -34,6 +35,16 @@ class Disciple
 
     }
 
+    public function get_id()
+    {
+        return $this->_id;
+    }
+
+    public function set_id($id)
+    {
+        $this->_id = $id;
+    }
+
     public function get_name()
     {
         return $this->_name;
@@ -54,14 +65,14 @@ class Disciple
         $this->_sex = $sex;
     }
 
-    public function get_maritsl_status()
+    public function get_marital_status()
     {
-        return $this->_maritsl_status;
+        return $this->_marital_status;
     }
 
-    public function set_maritsl_status($maritsl_status)
+    public function set_marital_status($maritsl_status)
     {
-        $this->_maritsl_status = $maritsl_status;
+        $this->_marital_status = $maritsl_status;
     }
 
     public function get_occupation()
@@ -249,7 +260,7 @@ class Disciple
 
         $this->_name = $name;
         $this->_sex = $sex;
-        $this->_maritsl_status = $marital_status;
+        $this->_marital_status = $marital_status;
         $this->_occupation = $occupation;
         $this->_email = $email;
         $this->_address = $address;
@@ -273,13 +284,13 @@ class Disciple
     {
         $dbh = $this->connect_db();
         $statementHandler = $dbh->prepare('INSERT INTO disciples VALUES
-                                          (:id,:name,:sex,:marital,:occupation,:email,:address,:member_status,:join_date,:submit_status,
+                                          (:id,:full_name,:sex,:marital,:occupation,:email,:address,:member_status,:join_date,:submit_status,
                                            :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future,:program)');
         $id = '';
         $statementHandler->bindParam(':id', $id);
         $statementHandler->bindParam(':name', $this->_name);
         $statementHandler->bindParam(':sex', $this->_sex);
-        $statementHandler->bindParam(':marital', $this->_maritsl_status);
+        $statementHandler->bindParam(':marital', $this->_marital_status);
         $statementHandler->bindParam(':email', $this->_email);
         $statementHandler->bindParam(':occupation', $this->_occupation);
         $statementHandler->bindParam(':address', $this->_address);
@@ -304,16 +315,18 @@ class Disciple
         return false;
     }
 
-    public function get_disciple($id){
+    public function get_disciple($id)
+    {
         $disciple = $this->fetch_disciple($id);
-        $this->_name = $disciple['name'];
+        $this->_id = $disciple['id'];
+        $this->_name = $disciple['full_name'];
         $this->_sex = $disciple['sex'];
         $this->_marital_status = $disciple['marital_status'];
         $this->_occupation = $disciple['occupation'];
         $this->_email = $disciple['email'];
         $this->_address = $disciple['address'];
         $this->_member_status = $disciple['member'];
-        $this->_join_date = $disciple['join'];
+        $this->_join_date = $disciple['join_date'];
         $this->_submit_status = $disciple['submitted'];
         $this->_submit_to = $disciple['who_submit'];
         $this->_want_submit = $disciple['submit'];
@@ -341,9 +354,41 @@ class Disciple
         return false;
     }
 
-    public function edit_disciple(){
+    public function edit_disciple()
+    {
+        $dbh = $this->connect_db();
+        $statementHandler = $dbh->prepare('UPDATE disciples SET full_name = :name,sex = :sex,marital_status = :marital,
+        email = :email, occupation = :occupation, address = :address, member = :member_status, join_date = :join_date, submitted=:submit_status,
+        who_submit = :submit_to, submit = :want_submit, submit_to = :want_submit_to, leader = :minister, department = :department,
+        role = :role, ministry = :join_ministry, sector = :sector, passion = :passion, future = :ministry_future WHERE id = :id');
 
+        $statementHandler->bindParam(':id', $this->_id,PDO::PARAM_INT);
+        $statementHandler->bindParam(':name', $this->_name,PDO::PARAM_STR);
+        $statementHandler->bindParam(':sex', $this->_sex,PDO::PARAM_STR);
+        $statementHandler->bindParam(':marital', $this->_marital_status,PDO::PARAM_STR);
+        $statementHandler->bindParam(':email', $this->_email,PDO::PARAM_STR);
+        $statementHandler->bindParam(':occupation', $this->_occupation,PDO::PARAM_STR);
+        $statementHandler->bindParam(':address', $this->_address,PDO::PARAM_STR);
+        $statementHandler->bindParam(':member_status', $this->_member_status,PDO::PARAM_STR);
+        $statementHandler->bindParam(':join_date', $this->_join_date,PDO::PARAM_STR);
+        $statementHandler->bindParam(':submit_status', $this->_submit_status,PDO::PARAM_STR);
+        $statementHandler->bindParam(':submit_to', $this->_submit_to,PDO::PARAM_STR);
+        $statementHandler->bindParam(':want_submit', $this->_want_submit,PDO::PARAM_STR);
+        $statementHandler->bindParam(':want_submit_to', $this->_want_submit_to,PDO::PARAM_STR);
+        $statementHandler->bindParam(':minister', $this->_minister,PDO::PARAM_STR);
+        $statementHandler->bindParam(':department', $this->_department,PDO::PARAM_STR);
+        $statementHandler->bindParam(':role', $this->_role,PDO::PARAM_STR);
+        $statementHandler->bindParam(':join_ministry', $this->_join_ministry,PDO::PARAM_STR);
+        $statementHandler->bindParam(':sector', $this->_sector,PDO::PARAM_STR);
+        $statementHandler->bindParam(':passion', $this->_passion,PDO::PARAM_STR);
+        $statementHandler->bindParam(':ministry_future', $this->_ministry_future,PDO::PARAM_STR);
+        $result = $statementHandler->execute();
+        if ($result) {
+            return $result;
+        }
+        return false;
     }
+
     private function connect_db()
     {
         try {

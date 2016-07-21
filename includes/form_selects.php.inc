@@ -22,12 +22,12 @@ function sex_select(Disciple $disciple)
 function marital_select(Disciple $disciple)
 {
 
-    if ($disciple->get_maritsl_status() == 'Married') {
+    if ($disciple->get_marital_status() == 'Married') {
         ?>
         <option value="Married" selected>Married</option>
         <option value="Engaged">Engaged</option>
         <option value="Single">Single</option>
-    <?php } else if ($disciple->get_maritsl_status() == 'Engaged') { ?>
+    <?php } else if ($disciple->get_marital_status() == 'Engaged') { ?>
         <option value="Married">Married</option>
         <option value="Engaged" selected>Engaged</option>
         <option value="Single">Single</option>
