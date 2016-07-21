@@ -49,10 +49,12 @@ body {
     margin-left: 2%;
     margin-right: 2%;
 }
-/*.glyphicon.glyphicon-user, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-remove, .glyphicon.glyphicon-road {
-    font-size: 23px;
-}*/
-
+#disc-table{
+    margin: 5% !important;
+}
+.disc-label{
+    font-variant-caps: all-petite-caps;
+}
 div {
     /*border: solid red 1px !important;*/
 }
