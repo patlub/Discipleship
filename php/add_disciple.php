@@ -37,7 +37,7 @@ if(!isset($_GET['pid'])){
 	$pid = $_GET['pid'];
 }
 
-$disciple = new Disciple($name,$sex,$marital_status,$occupation,$email,$address,$member,$join,$submitted,$who_submit,
+$disciple = Disciple::newDisciple($name,$sex,$marital_status,$occupation,$email,$address,$member,$join,$submitted,$who_submit,
                         $submit,$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future,$pid);
 $result = $disciple->add_disciple();
 if($result) {

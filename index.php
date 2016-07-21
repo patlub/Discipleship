@@ -6,7 +6,6 @@ require_once 'classes/DatabaseHelper.php';
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -27,7 +26,7 @@ require_once 'classes/DatabaseHelper.php';
                 <th>Occupation</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th width="150">Church Member</th>
+                <th width="10">Church Member</th>
             </tr>
             </thead>
             <tbody>

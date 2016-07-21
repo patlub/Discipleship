@@ -49,9 +49,9 @@ body {
     margin-left: 2%;
     margin-right: 2%;
 }
-.glyphicon.glyphicon-user, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-remove, .glyphicon.glyphicon-road {
+/*.glyphicon.glyphicon-user, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-remove, .glyphicon.glyphicon-road {
     font-size: 23px;
-}
+}*/
 
 div {
     /*border: solid red 1px !important;*/

@@ -6,8 +6,8 @@
         <div id="home" class="menu-item col-md-2"><a href="index.php" >Home</a></div>
         <div id="add-disciple" class="menu-item col-md-2"><a href="add_disciple.php" >Add Disciple</a></div>
         <div id="stats" class="menu-item col-md-2"><a href="stats.php">Statistics</a></div>
-        <div id="roll-call" class="menu-item col-md-2"><a href="roll-call.php">Roll Call</a></div>
-        <div id="add_program" class="menu-item col-md-2"><a data-toggle="modal" data-target="#myModal">Add Program</a></div>
+        <div id="roll-call" class="menu-item col-md-2"><a href="roll-call.php">Attendance</a></div>
+        <div id="add_program" class="menu-item col-md-2"><a data-toggle="modal" href="" data-target="#programModal">Add Program</a></div>
         
 <?php 
           include_once('modals/modal.php');

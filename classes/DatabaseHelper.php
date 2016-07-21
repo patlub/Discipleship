@@ -30,8 +30,7 @@ class DatabaseHelper
                         <?php echo $name; ?>
                     </td>
                     <td>
-                        <?php echo $sex; ?>
-                    </td>
+                        <?php echo $sex; ?></td>
                     <td>
                         <?php echo $status; ?>
                     </td>
@@ -48,10 +47,10 @@ class DatabaseHelper
                         <?php echo $church_member; ?>
                     </td>
                     <td align="center">
-                        <a href="view_disciple.php?<?php echo $id; ?>" class="btn btn-primary btn-xs">View</a>
-                        <a href="edit_disciple.php?<?php echo $id; ?>" class="btn btn-success btn-xs">Edit</a>
-                        <a href="delete_disciple.php?<?php echo $id; ?>" class="btn btn-danger btn-xs">Delete</a>
-                        <a href="attend_disciple.php?<?php echo $id; ?>" class="btn btn-warning btn-xs">Attendence</a>
+                        <a href="view_disciple.php?id=<?php echo $id; ?>" class="btn btn-primary btn-xs">View</a>
+                        <a href="edit_disciple.php?id=<?php echo $id; ?>" class="btn btn-success btn-xs">Edit</a>
+                        <a href="delete_disciple.php?id=<?php echo $id; ?>" class="btn btn-danger btn-xs">Delete</a>
+                        <a href="attend_disciple.php?id=<?php echo $id; ?>" class="btn btn-warning btn-xs">Attendence</a>
                     </td>
                 </tr>
             <?php
@@ -83,9 +82,8 @@ class DatabaseHelper
                         <?php echo $name; ?>
                     </td>
                     <td align="center">
-                        <!-- <div class="checkbox"> -->
-                              <label><input type="checkbox" value=""></label>
-                        <!-- </div> -->
+                              <label><input type="checkbox" value="<?php echo $id;?>"></label>
+                              <input type="hidden" value="<?php echo $id;?>">
                     </td>
                     <td>
                         <?php echo $sex; ?>
@@ -121,7 +119,7 @@ class DatabaseHelper
     public function connect_db()
     {
         try {
-            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "patrick");
+            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "");
         } catch (PDOException $e) {
             echo "Connection Error: " . $e->getMessage();
         }

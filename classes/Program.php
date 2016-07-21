@@ -38,7 +38,7 @@ class Program{
 	public function connectDB()
     {
         try {
-            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "patrick");
+            return new PDO("mysql:host=localhost;dbname=discipleship", "root", "");
         } catch (PDOException $e) {
             echo "Connection Error: " . $e->getMessage();
         }

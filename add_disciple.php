@@ -31,9 +31,8 @@ session_start();
                     <div class="row">
                         <label for="sex" class="control-label">Sex</label>
                         <select id="sex" name="sex" class="form-control">
-                            <option value="m">Male</option>
-                            <option value="m"><a href="hello.php">link</a></option>
-                            <option value="f">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                 </div>
@@ -41,9 +40,9 @@ session_start();
                     <div class="row">
                         <label for="marital-status" class="control-label">Marital Status</label>
                         <select id="marital-status" name="marital-status" class="form-control">
-                            <option value="m">Married</option>
-                            <option value="e">Engaged</option>
-                            <option value="s" selected>Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Engaged">Engaged</option>
+                            <option value="Single" selected>Single</option>
                         </select>
                     </div>
                 </div>
@@ -71,8 +70,8 @@ session_start();
                     <div class="row">
                         <label for="member" class="control-label">Are you a Church Member ?</label>
                         <select id="member" name="member" class="form-control">
-                            <option value="y" selected>Yes</option>
-                            <option value="n">No</option>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                 </div>
@@ -86,8 +85,8 @@ session_start();
                     <div class="row">
                         <label for="submitted" class="control-label">Are you currently submitted ?</label>
                         <select id="submitted" name="submitted" class="form-control">
-                            <option value="y" selected>Yes</option>
-                            <option value="n">No</option>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                 </div>
@@ -101,8 +100,8 @@ session_start();
                     <div class="row">
                         <label for="submit" class="control-label">If No, would you like to submit ?</label>
                         <select id="submit" name="submit" class="form-control">
-                            <option value="y" selected>Yes</option>
-                            <option value="n">No</option>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                 </div>
@@ -119,8 +118,8 @@ session_start();
                     <div class="row">
                         <label for="leader" class="control-label">Are you a leader/minister at CHC ?</label>
                         <select id="leader" name="leader" class="form-control">
-                            <option value="y">Yes</option>
-                            <option value="n" selected>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No" selected>No</option>
                         </select>
                     </div>
                 </div>
@@ -140,8 +139,8 @@ session_start();
                     <div class="row">
                         <label for="ministry" class="control-label">If No, would you like to join ministry ?</label>
                         <select id="ministry" name="ministry" class="form-control">
-                            <option value="y" selected>Yes</option>
-                            <option value="n">No</option>
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                 </div>
@@ -172,6 +171,5 @@ session_start();
         </form>
     </div>
 </div>
-<script type="text/javascript">$('.datepicker').datepicker();</script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
@@ -29,7 +29,7 @@
     <div class="row">
         <div class="form-group">
                     <div class="col-md-2">
-                        <input id="datepicker" type="text" name="datepicker" value="present" class="form-control"
+                        <input id="datepicker" type="text" name="datepicker" value="mm/dd/YY" class="form-control"
                                placeholder="Date" required/>
                     </div>
                 </div>
@@ -41,13 +41,13 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th width="100">Roll-call</th>
+                <th width="100" style="color:#FF0000;">Roll-call</th>
                 <th>Sex</th>
                 <th width="10">Status</th>
                 <th>Occupation</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th>Church Member</th>
+                <th width="10">Church Member</th>
             </tr>
             </thead>
             <tbody>
@@ -59,6 +59,12 @@
             ?>
             </tbody>
         </table>
+        <div class="form-group">
+                    <div class="col-md-2" style="float:right;">
+                        <input id="datepicker" type="submit" name="submit" value="Submit" class="form-control btn btn-success"
+                               placeholder="Date"/>
+                    </div>
+                </div>
         </form>
     </div>
 </div>
