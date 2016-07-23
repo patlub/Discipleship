@@ -15,7 +15,7 @@ require_once 'classes/DatabaseHelper.php';
 <body>
 <div class="container-fluid">
     <?php include_once 'includes/header.php.inc' ?>
-    <div id="table-box" class="row">
+    <div id="table-box" class="row" align="center">
         <table id="disc-table" cellpadding="0" cellspacing="0" border="0"
                class="table table-striped table-bordered">
             <thead>

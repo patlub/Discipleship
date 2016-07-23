@@ -18,8 +18,11 @@ session_start();
 <div class="container-fluid">
     <?php include_once('includes/header.php.inc');
     ?>
+    <script src="js/forms.js"></script>
+    <div class="success-alert row" align="center">Disciple has been added</div>
+
     <div id="form-div" class="row">
-        <form method="post" role="form" enctype="multipart/form-data" action="php/add_disciple.php">
+        <form id="add-disciple-form" role="form" enctype="multipart/form-data">
             <div class="col-md-3 section-div">
                 <div id="section1" class="section">Section 1</div>
                 <div class="form-group">
@@ -171,5 +174,6 @@ session_start();
         </form>
     </div>
 </div>
+<div class="loader"><!-- Place at bottom of page --></div>
 </body>
 </html>

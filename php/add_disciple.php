@@ -28,10 +28,9 @@ $sector = $_POST['sector'];
 $passion = $_POST['passion'];
 $future = $_POST['future'];
 
-echo $_GET['pid'];
 if(!isset($_GET['pid'])){
 	echo "lalala";
-	$pid = $_SESSION['prog_id'];
+	$pid = 1;
 }else{
 	echo "wooooow";
 	$pid = $_GET['pid'];

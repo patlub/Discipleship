@@ -8,9 +8,10 @@
 session_start();
 require_once('../classes/Disciple.php');
 
+$id = $_POST['id'];
 $name = $_POST['name'];
 $sex = $_POST['sex'];
-$marital_status = $_POST['sex'];
+$marital_status = $_POST['marital-status'];
 $occupation = $_POST['occupation'];
 $email = $_POST['email'];
 $address = $_POST['physical-address'];
@@ -28,7 +29,6 @@ $sector = $_POST['sector'];
 $passion = $_POST['passion'];
 $future = $_POST['future'];
 
-$id = $_GET['id'];
 $disciple = Disciple::newDisciple($name,$sex,$marital_status,$occupation,$email,$address,$member,$join,$submitted,$who_submit,
                         $submit,$submit_to,$leader,$department,$role,$ministry,$sector,$passion,$future,null);
 $disciple->set_id($id);

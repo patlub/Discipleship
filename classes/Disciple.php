@@ -288,7 +288,7 @@ class Disciple
                                            :submit_to,:want_submit,:want_submit_to,:minister,:department,:role,:join_ministry,:sector,:passion,:ministry_future,:program)');
         $id = '';
         $statementHandler->bindParam(':id', $id);
-        $statementHandler->bindParam(':name', $this->_name);
+        $statementHandler->bindParam(':full_name', $this->_name);
         $statementHandler->bindParam(':sex', $this->_sex);
         $statementHandler->bindParam(':marital', $this->_marital_status);
         $statementHandler->bindParam(':email', $this->_email);

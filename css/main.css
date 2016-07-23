@@ -34,7 +34,9 @@ body {
 }
 
 #table-box {
-    margin: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
 }
 
 #roll-call-table-box {
@@ -45,16 +47,36 @@ body {
 #date-box {
     margin: 2%;
 }
-.table-glyph{
-    margin-left: 2%;
-    margin-right: 2%;
-}
 #disc-table{
-    margin: 5% !important;
 }
 .disc-label{
     font-variant-caps: all-petite-caps;
 }
 div {
     /*border: solid red 1px !important;*/
+}
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('http://localhost/Discipleship/ajax-loader.gif')
+    50% 50%
+    no-repeat;
+}
+.success-alert{
+    display:    none;
+    z-index:    1000;
+    background-color: #1fa142;
+    color: #ffffff;
+    padding: 2%;
 }
